@@ -16,4 +16,4 @@
 ### Задание 4
 
 1. ![image](https://github.com/monzhelesov/HWORKS/blob/main/4new.png)
-2. [**репозиторий**] (https://github.com/monzhelesov/ter-homeworks/tree/terraform-03)
+2. [**репозиторий**](https://github.com/monzhelesov/ter-homeworks/tree/terraform-03)
