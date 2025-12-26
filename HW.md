@@ -1,19 +1,40 @@
-# Домашнее задание к занятию «Управляющие конструкции в коде Terraform» - Монжелесов Роман
+# Домашнее задание к занятию «Системы мониторинга» - Монжелесов Роман
 
 ### Задание 1
 
-1. ![image](https://github.com/monzhelesov/HWORKS/blob/main/1new.png)
-2. ![image](https://github.com/monzhelesov/HWORKS/blob/main/1.1new.png)
+Метрики: CPU, RAM, диск (space + inode + IO), HTTP RPS, коды ответов, latency — покрывают производительность, надёжность и качество сервиса.
 
 ### Задание 2
 
-1. Выполнено
+Менеджеру показывать KPI/SLO: availability %, error rate %, и SLA (понятно без технических деталей).
 
 ### Задание 3
 
-1. Выполнено
+Настроить локальное логирование приложений в файлы, которые разработчики смогут читать, либо использовать простых агентов (например, fluentd или filebeat) без отдельного сервера.
 
 ### Задание 4
 
-1. ![image](https://github.com/monzhelesov/HWORKS/blob/main/4new.png)
-2. [**репозиторий**](https://github.com/monzhelesov/ter-homeworks/tree/terraform-03)
+SLA низкая, потому что summ_all_requests включает 3xx, таймауты и aborted requests, а нужно считать только успешные запросы или учитывать допустимые коды.
+
+### Задание 5
+
+Pull: Плюсы - централизованность, проще отладка, безопасность; Минусы - нагрузка на мониторинг, нужен доступ до хостов.\
+Push: Плюсы - оперативность, подходит для краткоживущих сервисов; Минусы - сложнее масштабировать, больше точек отказа.
+
+### Задание 6
+
+Push: TICK\
+Pull: Prometheus, Nagios\
+Гибрид: Zabbix, VictoriaMetrics
+
+### Задание 7
+
+![image](https://github.com/monzhelesov/HWORKS/blob/main/111.png)
+
+### Задание 8
+
+![image](https://github.com/monzhelesov/HWORKS/blob/main/112.png)
+
+### Задание 9
+
+![image](https://github.com/monzhelesov/HWORKS/blob/main/113.png)
