@@ -1,40 +1,36 @@
-# Домашнее задание к занятию «Системы мониторинга» - Монжелесов Роман
+# Домашнее задание к занятию «Средство визуализации Grafana» - Монжелесов Роман
 
 ### Задание 1
 
-Метрики: CPU, RAM, диск (space + inode + IO), HTTP RPS, коды ответов, latency — покрывают производительность, надёжность и качество сервиса.
+![image](https://github.com/monzhelesov/HWORKS/blob/main/11.png)
 
 ### Задание 2
 
-Менеджеру показывать KPI/SLO: availability %, error rate %, и SLA (понятно без технических деталей).
+![image](https://github.com/monzhelesov/HWORKS/blob/main/12.png)\
+
+> 1. CPU utilization\
+100 - (
+  avg by (instance) (
+    rate(node_cpu_seconds_total{mode="idle"}[5m])
+  ) * 100
+)
+
+> 2. CPU Load Average 1/5/15\
+node_load1
+node_load5
+node_load15
+
+> 3. Memory RAM\
+node_memory_MemAvailable_bytes
+
+> 4. Storage\
+node_filesystem_avail_bytes{mountpoint="/",fstype!="tmpfs"}
 
 ### Задание 3
 
-Настроить локальное логирование приложений в файлы, которые разработчики смогут читать, либо использовать простых агентов (например, fluentd или filebeat) без отдельного сервера.
+![image](https://github.com/monzhelesov/HWORKS/blob/main/13.png)
+![image](https://github.com/monzhelesov/HWORKS/blob/main/133.png)
 
 ### Задание 4
 
-SLA низкая, потому что summ_all_requests включает 3xx, таймауты и aborted requests, а нужно считать только успешные запросы или учитывать допустимые коды.
-
-### Задание 5
-
-Pull: Плюсы - централизованность, проще отладка, безопасность; Минусы - нагрузка на мониторинг, нужен доступ до хостов.\
-Push: Плюсы - оперативность, подходит для краткоживущих сервисов; Минусы - сложнее масштабировать, больше точек отказа.
-
-### Задание 6
-
-Push: TICK\
-Pull: Prometheus, Nagios\
-Гибрид: Zabbix, VictoriaMetrics
-
-### Задание 7
-
-![image](https://github.com/monzhelesov/HWORKS/blob/main/111.png)
-
-### Задание 8
-
-![image](https://github.com/monzhelesov/HWORKS/blob/main/112.png)
-
-### Задание 9
-
-![image](https://github.com/monzhelesov/HWORKS/blob/main/113.png)
+Файл лежит вместе с домашкой под названием dashboard.json
