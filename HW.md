@@ -1,10 +1,12 @@
-# Домашнее задание к занятию «Система сбора логов Elastic Stack» - Монжелесов Роман
+# Домашнее задание к занятию «Работа с roles» - Монжелесов Роман
 
-### Задание 1
+## Задание 1
 
-![image](https://github.com/monzhelesov/HWORKS/blob/main/1.png)
-![image](https://github.com/monzhelesov/HWORKS/blob/main/2.png)
+### Роли
 
-### Задание 2
+- **Vector Role**: [vector-role](https://github.com/monzhelesov/vector-role)
+- **Lighthouse Role**: [lighthouse-role](https://github.com/monzhelesov/lighthouse-role)
 
-![image](https://github.com/monzhelesov/HWORKS/blob/main/3.png)
+### Playbook
+
+- **Playbook Repository**: [my-ansible](https://github.com/monzhelesov/my-ansible)
