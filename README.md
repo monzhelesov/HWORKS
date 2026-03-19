@@ -1,12 +1,30 @@
-# Домашнее задание к занятию «Создание собственных модулей» - Монжелесов Роман
+# Домашнее задание к занятию «Микросервисы: принципы» - Монжелесов Роман
 
 ## Задание 1
 
-[Ссылка на коллекцию](https://github.com/monzhelesov/my_own_collection)
+| Критерий | Nginx | Kong | Traefik | HAProxy |
+|---|---|---|---|---|
+| Маршрутизация по конфигу | Да, конфиг-файлы | Да, Admin API + декларативно | Да, авто-обнаружение сервисов | Да, конфиг-файлы |
+| Проверка аутентификации | Через доп. модули | Из коробки: JWT, OAuth2, Basic, LDAP | Через middleware (BasicAuth, ForwardAuth) | Только ACL, остальное — внешние модули |
+| Терминация HTTPS | Да | Да | Да + автоматический Let's Encrypt | Да |
+| Простота настройки | Средняя | Высокая | Высокая | Средняя |
+| Плагины/расширения | Много, но часть только в Plus | 200+ плагинов | Middleware, Docker/K8s-провайдеры | Минимально |
 
-[Ссылка на архив](https://github.com/monzhelesov/my_own_collection/releases/download/1.0.0/my_own_namespace-yandex_cloud_elk-1.0.0.tar.gz)
+### Выбор: Kong
 
-- **Задание 4**: ![url](https://github.com/monzhelesov/HWORKS/blob/main/4.png)
-- **Задание 6**: ![url](https://github.com/monzhelesov/HWORKS/blob/main/6.png)
-- **Задание 15**: ![url](https://github.com/monzhelesov/HWORKS/blob/main/15.png)
-- **Задание 16**: ![url](https://github.com/monzhelesov/HWORKS/blob/main/16.png)
+Выбрал Kong, потому что он закрывает все три требования.
+
+## Задание 2
+
+| Критерий | Kafka | RabbitMQ | NATS JetStream | Redis Streams |
+|---|---|---|---|---|
+| Кластеризация | Нативная, репликация партиций | Да, зеркалирование очередей | Да, встроенная | Через Redis Cluster |
+| Хранение на диске | Да, это базовый принцип работы | Да, persistent-очереди | Да, file-based | Частично (AOF/RDB) |
+| Скорость | Очень высокая (~млн msg/sec) | Высокая (~десятки тыс. msg/sec) | Очень высокая | Высокая |
+| Форматы сообщений | Любые (байты), Avro/Protobuf через Schema Registry | Любые, JSON, XML | Любые (байты) | Строки и байты |
+| Разделение прав доступа | ACL на топики и consumer groups | vhosts + права на exchanges/queues | Accounts + permissions | ACL на ключи (ограниченно) |
+| Простота эксплуатации | Средняя (KRaft упростил жизнь) | Высокая, есть Web UI | Высокая, лёгкий бинарник | Высокая, если Redis уже есть |
+
+### Выбор: Apache Kafka
+
+Остановился на Kafka, потому что она изначально спроектирована так, что все сообщения пишутся на диск в виде лога и кластеризация работает через партиции с репликами.
