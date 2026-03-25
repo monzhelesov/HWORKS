@@ -1,14 +1,16 @@
-# Домашнее задание к занятию «Микросервисы: масштабирование» - Монжелесов Роман
+# Домашнее задание к занятию «Базовые объекты K8S» - Монжелесов Роман
 
 ## Задание 1
 
-В качестве платформы выбираю Kubernetes. Прохожусь по требованиям:
-Контейнеры — K8s работает с контейнерами из коробки (containerd, CRI-O). Приложения деплоятся как Pod'ы.
-Обнаружение сервисов и маршрутизация — встроенные Service + CoreDNS. Поды находят друг друга по DNS-именам. Внешний трафик идёт через Ingress Controller.
-Горизонтальное масштабирование — kubectl scale или replicas в манифесте, K8s сам раскидывает нагрузку.
-Автомасштабирование — HPA меняет количество подов по метрикам (CPU, RAM). Cluster Autoscaler добавляет/убирает ноды.
-Разделение внешних/внутренних ресурсов — Namespaces + NetworkPolicy. Через Ingress определяется что доступно снаружи, остальное живёт только внутри кластера.
-Конфигурация и секреты — ConfigMaps для переменных окружения, Secrets для паролей и ключей. Для продакшена можно подключить Vault.
+![url](https://github.com/monzhelesov/HWORKS/blob/main/1.png)
+![url](https://github.com/monzhelesov/HWORKS/blob/main/2.png)
 
-Почему не другие решения:
-Docker Swarm проще, но у него нет нормального автоскейлинга и он почти не развивается. Nomad неплох, но для service discovery нужен отдельный Consul, а экосистема сильно меньше. K8s — стандарт, под него заточены все облака (GKE, EKS, AKS), проблемы гуглятся за минуту.
+Манифест пода: [hello-world-pod.yaml](hello-world-pod.yaml)
+
+## Задание 2
+
+![url](https://github.com/monzhelesov/HWORKS/blob/main/3.png)
+![url](https://github.com/monzhelesov/HWORKS/blob/main/4.png)
+
+Манифест пода: [netology-web-pod.yaml](netology-web-pod.yaml)
+Манифест сервиса: [netology-svc.yaml](netology-svc.yaml)
