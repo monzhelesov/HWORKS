@@ -1,16 +1,19 @@
-# Домашнее задание к занятию «Базовые объекты K8S» - Монжелесов Роман
+# Домашнее задание к занятию «Запуск приложений в K8S» - Монжелесов Роман
 
 ## Задание 1
 
 ![url](https://github.com/monzhelesov/HWORKS/blob/main/1.png)
 ![url](https://github.com/monzhelesov/HWORKS/blob/main/2.png)
-
-Манифест пода: [hello-world-pod.yaml](hello-world-pod.yaml)
+```
+Манифест deployment: [deployment-nginx-multitool.yaml](deployment-nginx-multitool.yaml)
+Манифест service: [svc-nginx-multitool.yaml](svc-nginx-multitool.yaml)
+```
 
 ## Задание 2
 
 ![url](https://github.com/monzhelesov/HWORKS/blob/main/3.png)
 ![url](https://github.com/monzhelesov/HWORKS/blob/main/4.png)
-
-Манифест пода: [netology-web-pod.yaml](netology-web-pod.yaml)
-Манифест сервиса: [netology-svc.yaml](netology-svc.yaml)
+```
+Манифест deployment: [deployment-nginx-init.yaml](deployment-nginx-init.yaml)
+Манифест service: [svc-nginx-init.yaml](svc-nginx-init.yaml)
+```
