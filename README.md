@@ -5,16 +5,23 @@
 ![url](https://github.com/monzhelesov/HWORKS/blob/main/1.png)
 ![url](https://github.com/monzhelesov/HWORKS/blob/main/2.png)
 
-Манифест deployment: [deployment-nginx-multitool.yaml](deployment-nginx-multitool.yaml)
+Манифест deployment: [deployment.yaml](deployment.yaml)
 
-Манифест service: [svc-nginx-multitool.yaml](svc-nginx-multitool.yaml)
+Манифест service-node: [service-nodeport.yaml](service-nodeport.yaml)
+
+Манифест service-cluster: [service-clusterip.yaml](service-clusterip.yaml)
 
 
 ## Задание 2
 
 ![url](https://github.com/monzhelesov/HWORKS/blob/main/3.png)
-![url](https://github.com/monzhelesov/HWORKS/blob/main/4.png)
 
-Манифест deployment: [deployment-nginx-init.yaml](deployment-nginx-init.yaml)
+Манифест deployment-front: [deployment-frontend.yaml](deployment-frontend.yaml)
 
-Манифест service: [svc-nginx-init.yaml](svc-nginx-init.yaml)
+Манифест deployment-back: [deployment-backend.yaml](deployment-backend.yaml)
+
+Манифест service-front: [service-frontend.yaml](service-frontend.yaml)
+
+Манифест service-back: [service-backend.yaml](service-backend.yaml)
+
+Ingress: [ingress.yaml](ingress.yaml)
